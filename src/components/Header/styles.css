@@ -1,0 +1,14 @@
+
+div#header-div {
+    width: 100%;
+    height: 200px;
+    background: cornflowerblue;
+    font-size: 22px;
+    font-weight: bold;
+    color:#fafafa;
+    text-align: center;
+
+}
+.header-div p {
+    text-align: left;
+}

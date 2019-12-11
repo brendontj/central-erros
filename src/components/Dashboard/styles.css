@@ -1,0 +1,45 @@
+.log-list {
+    max-width: 90%;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    justify-items: center;
+    
+}
+
+.log-list article {
+    background: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+
+.log-list article p {
+    font-size: 16px;
+    color: #999;
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.log-list article a {
+    height: 42px;
+    border-radius: 5px;
+    border: 2px solid cornflowerblue;
+    background: none;
+    margin-top: 10px;
+    color: cornflowerblue;
+    font-weight: bold;
+    font-size:16px;
+    text-decoration: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transiction: all 0.2s;
+}
+
+.log-list article a:hover {
+    background: cornflowerblue;
+    color: cornsilk;
+}

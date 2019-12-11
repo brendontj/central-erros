@@ -1,0 +1,22 @@
+.log-info {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 20px;
+    background: #FFF;
+    border-radius: 5px;
+    border:1px solid #DDD;
+}
+
+.log-info h1 {
+    font-size: 32px;
+}
+
+.log-info p {
+    color: #666;
+    line-height: 24px;
+    margin-top: 5px;
+}
+
+.log-info p a {
+    color: cornflowerblue;
+}
