@@ -6,7 +6,9 @@
 }
 
 body, html {
-    background: #DEE7FE;
+ 
+    background-image: url("bbd36dcc.png");
+    background-color: #DEE7FE;
     font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import api from "../../services/api";
-import queryString from 'query-string';
 import Dashboard from '../../components/Dashboard'
 import { withRouter } from 'react-router-dom';
 

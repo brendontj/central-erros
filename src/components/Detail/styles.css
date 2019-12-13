@@ -20,3 +20,7 @@
 .log-info p a {
     color: #829FD9;
 }
+.buttonToken {
+    display: block;
+    margin: 0 auto;
+}
