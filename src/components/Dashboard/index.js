@@ -89,6 +89,7 @@ export default class Dashboard extends Component {
     render() {
 
         return (
+            <Container>
             <Container className="log-list">
                 <ButtonToolbar className='Toolbar-find'>
                     <DropdownButton
@@ -217,6 +218,7 @@ export default class Dashboard extends Component {
                 </div>
 
 
+            </Container>
             </Container>
         );
     }

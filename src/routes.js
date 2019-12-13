@@ -23,7 +23,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
 
-      <Route exact path="/" render={() => (
+      <PrivateRoute exact path="/" render={() => (
         isAuthenticated () ? (
           <Redirect to="/log" />
         ) : ( <SignUp />)
