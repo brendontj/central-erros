@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from "../../services/api";
-
+import './styles.css';
 import { Link } from 'react-router-dom';
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -16,7 +16,6 @@ import Badge from 'react-bootstrap/Badge'
 import Spinner from 'react-bootstrap/Spinner'
 
 
-import './styles.css';
 
 export default class Dashboard extends Component {
 
