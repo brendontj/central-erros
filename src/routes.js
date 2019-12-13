@@ -23,7 +23,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
 
-      <PrivateRoute exact path="/" render={() => (
+      <Route exact path="/" render={() => (
         isAuthenticated () ? (
           <Redirect to="/log" />
         ) : ( <SignUp />)
@@ -33,7 +33,11 @@ const Routes = () => (
       <Route path="/register" component={SignUp} />
       <PrivateRoute path="/log" exact component={Main} />
       <PrivateRoute path="/log/:id" component={Log} />
-      <Route path="*" component={() => <h1>Page not found</h1>} />
+      <Route path="*" render={() => (
+        isAuthenticated () ? (
+          <Redirect to="/log" />
+        ) : ( <SignUp />)
+      )} />
     </Switch>
   </BrowserRouter>
 );
