@@ -9,7 +9,7 @@ class Log extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header {...this.props}/>
+                <Header />
                 <Detail {...this.props}/>
             </React.Fragment>
         );

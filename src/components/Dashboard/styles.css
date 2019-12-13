@@ -26,10 +26,10 @@
 .log-list article a {
     height: 42px;
     border-radius: 5px;
-    border: 2px solid cornflowerblue;
+    border: 2px solid #829FD9;
     background: none;
     margin-top: 10px;
-    color: cornflowerblue;
+    color: #829FD9;
     font-weight: bold;
     font-size:16px;
     text-decoration: none;
@@ -39,7 +39,24 @@
     transiction: all 0.2s;
 }
 
+.MainBody {
+    margin-top: 100px;
+}
 .log-list article a:hover {
-    background: cornflowerblue;
+    background: #829FD9;
     color: cornsilk;
+}
+
+.Toolbar-find {
+    margin-top: 5px ;
+    margin-bottom: 10px;
+    
+}
+
+.Toolbar-itens {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.search-button {
+    margin-left: 5px;
 }

@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-
-
-
+import Image from 'react-bootstrap/Image'
 import api from "../../../services/api";
-
 import { Form, Container } from "./styles";
 
 class SignUp extends Component {
@@ -33,7 +30,9 @@ class SignUp extends Component {
   render() {
     return (
       <Container>
+        
         <Form onSubmit={this.handleSignUp}>
+        <Image src="../logo_transparent.png" roundedCircle className="logo-log "/>
           {this.state.error && <p>{this.state.error}</p>}
         
           <input

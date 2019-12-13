@@ -5,6 +5,7 @@ import api from "../../../services/api";
 import { login } from "../../../services/auth";
 
 import { Form, Container } from "./styles";
+import Image from 'react-bootstrap/Image'
 
 class SignIn extends Component {
   state = {
@@ -34,7 +35,9 @@ class SignIn extends Component {
   render() {
     return (
       <Container>
+        
         <Form onSubmit={this.handleSignIn}>
+        <Image src="../logo_transparent.png" roundedCircle className="logo-log "/>
           {this.state.error && <p>{this.state.error}</p>}
           <input
             type="email"

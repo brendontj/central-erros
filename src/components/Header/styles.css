@@ -1,14 +1,28 @@
 
-div#header-div {
-    width: 100%;
-    height: 200px;
-    background: cornflowerblue;
-    font-size: 22px;
+.header-logo {
+    
+    background: #829FD9;
+    
     font-weight: bold;
     color:#fafafa;
     text-align: center;
 
 }
-.header-div p {
-    text-align: left;
+.header-infos {
+    background-color: #829FD9;
+}
+
+.header-button {
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 15px;
+}
+.logo-log {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    
 }

@@ -14,8 +14,9 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid cornflowerblue;
-  img {
+  border: 2px solid #829FD9;
+  
+  logo-log {
     width: 100px;
     margin: 10px 0 40px;
   }
@@ -43,7 +44,7 @@ export const Form = styled.form`
   button {
     color: white;
     font-size: 16px;
-    background: cornflowerblue;;
+    background: #829FD9;;
     height: 56px;
     border: 0;
     border-radius: 5px;
@@ -52,8 +53,8 @@ export const Form = styled.form`
 
   button:hover {
     background: white;
-    color: cornflowerblue;
-    border: 1px solid cornflowerblue;
+    color: #829FD9;
+    border: 1px solid #829FD9;
 }
   hr {
     margin: 20px 0;

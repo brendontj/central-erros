@@ -13,11 +13,11 @@ export const Form = styled.form`
   padding: 20px;
   display: flex;
   flex-direction: column;
-  border: 2px solid cornflowerblue;
+  border: 2px solid #829FD9;
   align-items: center;
-  img {
-    width: 100px;
-    margin: 10px 0 40px;
+  logo-log {
+    width: 200px;
+    margin: 10px 20px 40px;
   }
   p {
     color: #ff3333;
@@ -44,7 +44,7 @@ export const Form = styled.form`
   button {
     color: #fff;
     font-size: 16px;
-    background: cornflowerblue;
+    background: #829FD9;
     height: 56px;
     border: 0;
     border-radius: 5px;
@@ -53,8 +53,8 @@ export const Form = styled.form`
 
   button:hover {
     background: white;
-    color: cornflowerblue;
-    border: 1px solid cornflowerblue;
+    color: #829FD9;
+    border: 1px solid #829FD9;
 }
 
   hr {
@@ -66,7 +66,7 @@ export const Form = styled.form`
   a {
     font-size: 16;
     font-weight: bold;
-    color: cornflowerblue;
+    color: #829FD9;
     text-decoration: none;
     
   }
