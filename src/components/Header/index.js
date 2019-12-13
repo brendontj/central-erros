@@ -60,7 +60,7 @@ class Header extends Component {
                             <Card className="card" bg='light' border="info">
                                 <Card.Header>
                                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                        Informacoes de sessao
+                                    Informações de sessão
                                      </Accordion.Toggle>
                                 </Card.Header>
                                     <Accordion.Collapse eventKey="0">
@@ -76,7 +76,7 @@ class Header extends Component {
                         </Accordion>
 
 
-                        <Link to="/login" className="header-button" varian="outline-info" onClick={this.log_off}>Logout</Link>
+                        <Link to="/login" className="header-button" varian="outline-info" onClick={this.log_off}>Sair</Link>
                     </Col>
 
                 </Row>

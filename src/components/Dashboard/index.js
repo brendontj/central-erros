@@ -31,7 +31,9 @@ export default class Dashboard extends Component {
             valor: "",
             filtroPor: 'Desenvolvimento',
             ordenarPor: 'Ordenar por',
-            buscarPor: 'Buscar por'
+            buscarPor: 'Buscar por',
+            logInfo : {},
+            page: 1,
 
         }
     }
@@ -44,11 +46,13 @@ export default class Dashboard extends Component {
     }
 
 
-    async loadLogs() {
+    async loadLogs(page = 1) {
 
-        const response = await api.get(`/logs?ambiente=${this.state.ambiente}&order=${this.state.order}&chave=${this.state.chave}&valor=${this.state.valor}`);
-        
-        this.setState({ logs: response.data.data});
+        const response = await api.get(`/logs?ambiente=${this.state.ambiente}&order=${this.state.order}&chave=${this.state.chave}&valor=${this.state.valor}&page=${page}`);
+        console.log(response.data)
+
+        const {data, ...logInfo} = response.data;
+        this.setState({ logs: data, logInfo, page});
     };
 
     async handle(newState) {
@@ -56,12 +60,36 @@ export default class Dashboard extends Component {
         this.loadLogs()
         await this.setState({valor: " ", chave: " ", buscarPor: 'Buscar por'});
     }
+    async arquivaLog (id) {
+        await api.put(`/logs/${id}?arquivado=1`)
+        const response = await api.get(`/logs?ambiente=${this.state.ambiente}&order=${this.state.order}&chave=${this.state.chave}&valor=${this.state.valor}`);
+        this.setState({ logs: response.data.data});
+    }
 
+    async deletaLog (id) {
+        await api.delete(`/logs/${id}`);
+        const response = await api.get(`/logs?ambiente=${this.state.ambiente}&order=${this.state.order}&chave=${this.state.chave}&valor=${this.state.valor}`);
+        this.setState({ logs: response.data.data});
+    }
+
+
+    prevPage = () => {
+    const { page, logInfo} = this.state;
+        if (page === 1) return;
+        const pageNumber = page - 1;
+
+        this.loadLogs(pageNumber);
+    }
+    nextPage = () => {
+        const { page, logInfo} = this.state;
+        if (page === logInfo.last_page) return;
+
+        const pageNumber = page + 1;
+        this.loadLogs(pageNumber);
+    }
     render() {
 
         return (
-
-
             <Container className="log-list">
                 <ButtonToolbar className='Toolbar-find'>
                     <DropdownButton
@@ -122,7 +150,7 @@ export default class Dashboard extends Component {
 
                                 <Card className="text-center">
                                     <Card.Body>
-                                        <Card.Title>Nro Ocorrencias</Card.Title>
+                                        <Card.Title>Eventos</Card.Title>
                                         <Card.Text>
                                             <strong>{log.eventos}</strong>
                                         </Card.Text>
@@ -166,16 +194,16 @@ export default class Dashboard extends Component {
                                 <Card className="text-center">
 
                                     <Card.Body>
-                                        <Card.Title>[Origem] ->{log.origem}</Card.Title>
+                                        <Card.Title>[Origem] => {log.origem}</Card.Title>
                                         <Card.Text>
-                                            [Descricao] -> {log.descricao}
+                                            [Descrição] => {log.descricao}
                                         </Card.Text>
 
-                                        <Button variant="outline-primary" className="search-button" >Arquivar</Button>
-                                        <Button variant="outline-primary" className="search-button" >Deletar</Button>
+                                        <Button variant="outline-primary" className="search-button" onClick = {() => this.arquivaLog(log.id)}>Arquivar</Button>
+                                        <Button variant="outline-primary" className="search-button" onClick = {() => this.deletaLog(log.id)}>Deletar</Button>
                                         <Link to={`/log/${log.id}`}> Detalhes </Link>
                                     </Card.Body>
-                                    <Card.Footer className="text-muted">{log.created_at}</Card.Footer>
+                                    <Card.Footer className="text-muted">Primeira ocorrência em {log.created_at}</Card.Footer>
                                 </Card>
                             </Col >
 
@@ -183,6 +211,11 @@ export default class Dashboard extends Component {
 
                     </article>
                 ))}
+
+                <div className="actions">
+                    <button onClick={this.prevPage}>Anterior</button>
+                    <button onClick={this.nextPage}>Próximo</button>
+                </div>
 
 
             </Container>

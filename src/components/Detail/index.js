@@ -83,7 +83,7 @@ export default class Detail extends Component {
 
                     
                     <Card.Body>
-                        <Card.Title>Titulo</Card.Title>
+                        <Card.Title>Título</Card.Title>
                         <Card.Text>
                             {log_detail.titulo}
                         </Card.Text>
@@ -104,7 +104,7 @@ export default class Detail extends Component {
                            
                         </Card.Text>
 
-                        <Card.Title>Descricao</Card.Title>
+                        <Card.Title>Descrição</Card.Title>
                         <Card.Text>
                             {log_detail.descricao}  
                         </Card.Text>
@@ -159,7 +159,7 @@ export default class Detail extends Component {
 
 
                             <Card.Body className="text-center">
-                                <Card.Title>Ultima atualizacao</Card.Title>
+                                <Card.Title>Última ocorrência</Card.Title>
                                 <Card.Footer className="text-muted">{log_detail.updated_at}</Card.Footer>
                             </Card.Body>
                         </Card>
