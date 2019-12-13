@@ -3,7 +3,7 @@ import { getToken } from "./auth";
 
 // Alterar baseURL dps
 const api = axios.create({ 
-    baseURL: 'https://frozen-fortress-37712.herokuapp.com/api'
+    baseURL: 'https://frozen-fortress-37712.herokuapp.com/api',withCredentials:true
 });
 
 api.interceptors.request.use(async config => {
